@@ -40,6 +40,7 @@ export default function Experience({ data }) {
                     alt={feature.title || 'Feature icon'}
                     width={120}
                     height={120}
+                    loading="lazy"
                     className="object-contain w-20 h-20"
                   />
                 </div>
@@ -77,6 +78,7 @@ export default function Experience({ data }) {
                       src={img.url}
                       alt={`Image ${idx + 1}`}
                       fill
+                      loading="lazy"
                       className="object-cover w-full h-full"
                     />
                   </div>

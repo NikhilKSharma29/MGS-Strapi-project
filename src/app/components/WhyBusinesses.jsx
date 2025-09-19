@@ -31,6 +31,7 @@ export default function WhyBusinesses({ data }) {
                     alt={item.heading}
                     width={400}
                     height={250}
+                    loading="lazy"
                     className="rounded-2xl object-contain object-center w-full h-56"
                   />
                 </div>

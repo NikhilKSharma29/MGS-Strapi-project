@@ -29,7 +29,7 @@ export default function Hero({ data }) {
             {data.badge}
           </span>
 
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+          <h1 className="text-4xl text-white md:text-5xl font-bold leading-tight mb-6">
             {data.title}
           </h1>
 

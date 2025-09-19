@@ -93,6 +93,7 @@ export default function Products({ data }) {
                   src={getImageUrl(item.image)}
                   alt={item.image?.alternativeText || item.title || 'Product image'}
                   fill
+                  loading="lazy"
                   className="object-cover object-center rounded-2xl"
                 />
               </div>
@@ -171,7 +172,7 @@ export default function Products({ data }) {
            
             className="inline-block bg-yellow-200 hover:bg-yellow-400 text-gray-900 font-medium px-6 py-3 rounded-4xl shadow-md transition"
           >
-            {data.catalogButton.label} ↓
+            Download Catalog ↓
           </a>
         </div>
       </div>
@@ -203,6 +204,7 @@ export default function Products({ data }) {
                     }
                     width={600}
                     height={600}
+                    loading="lazy"
                     className="object-cover h-full w-full rounded-2xl px-6 py-4 "
                   />
                 )}
@@ -285,11 +287,11 @@ export default function Products({ data }) {
                   />
 
                   {/* Submit Button */}
-                  <div className="pt-2">
+                  <div className="pt-2 flex items-center justify-center">
                     <button
                     onClick={handleGetQuote}
                       type="submit"
-                      className="w-full bg-yellow-200 hover:bg-yellow-300 text-gray-900 font-medium px-6 py-3 rounded-full shadow-md transition flex items-center justify-center"
+                      className=" bg-yellow-200 hover:bg-yellow-300 text-gray-900 font-medium px-6 py-3 rounded-full shadow-md transition flex items-center justify-center w-fit"
                     >
                       Get My Quote →
                     </button>

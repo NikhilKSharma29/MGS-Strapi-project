@@ -14,11 +14,15 @@ export default async function Footer({ data }) {
       phone: data?.phone || [],
       email: data?.email || '',
       address: data?.address || '',
-      siteLogo: data?.logo
+      siteLogo: data?.logo,
+      facebookLink: data?.facebookLink,
+      instagramLink: data?.instagramLink,
+      linkedinLink: data?.linkedinLink,
+      pintrestLink: data?.pintrestLink,
     };
   }
- 
-  
+
+
   const getIcon = (icon) => {
     switch (icon) {
       case "facebook":
@@ -34,7 +38,7 @@ export default async function Footer({ data }) {
     }
 
 
-    
+
   };
 
   return (
@@ -43,10 +47,10 @@ export default async function Footer({ data }) {
         {/* Logo */}
         <div>
           {contactInfo.siteLogo ? (
-            <Image 
-              src={contactInfo.siteLogo} 
-              alt="MGS Logo" 
-              className="w-24 mb-4" 
+            <Image
+              src={contactInfo.siteLogo}
+              alt="MGS Logo"
+              className="w-24 mb-4"
               width={96}
               height={40}
               priority
@@ -58,32 +62,32 @@ export default async function Footer({ data }) {
 
         <div className="flex gap-32 ">
           {/* Links */}
-        <div>
-          <h4 className="font-semibold mb-4">Links</h4>
-          <ul className="space-y-2">
-            {data.links.map((link, i) => (
-              <li key={i}>
-                <a href={link.href} className="hover:underline text-xs">
-                  {link.name}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+          <div>
+            <h4 className="font-semibold mb-4">Links</h4>
+            <ul className="space-y-2">
+              {data.links.map((link, i) => (
+                <li key={i}>
+                  <a href={link.href} className="hover:underline text-xs">
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-        {/* Legal */}
-        <div>
-          <h4 className="font-semibold mb-4">Legal</h4>
-          <ul className="space-y-2">
-            {data.legal.map((link, i) => (
-              <li key={i}>
-                <a  className="hover:underline text-xs">
-                  {link.name}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+          {/* Legal */}
+          <div>
+            <h4 className="font-semibold mb-4">Legal</h4>
+            <ul className="space-y-2">
+              {data.legal.map((link, i) => (
+                <li key={i}>
+                  <a className="hover:underline text-xs">
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         {/* Subscribe */}
@@ -106,72 +110,72 @@ export default async function Footer({ data }) {
       <div className="max-w-7xl mx-auto mt-10 grid md:grid-cols-3 gap-8 text-sm">
         <div className="flex items-center gap-2">
           <Image
-          src={data.icons.phone}
-          alt="Phone"
-          width={50}
-          height={50}
+            src={data.icons.phone}
+            alt="Phone"
+            width={50}
+            height={50}
           />
-         <div className="flex flex-col">
-         <p className="text-xs text-[#33A1E0] font-semibold">Phone</p>
-          <span className="text-xs">
-            {Array.isArray(contactInfo.phone) ? contactInfo.phone.join(" / ") : contactInfo.phone}
-          </span>
-         </div>
+          <div className="flex flex-col">
+            <p className="text-xs text-[#33A1E0] font-semibold">Phone</p>
+            <span className="text-xs">
+              {Array.isArray(contactInfo.phone) ? contactInfo.phone.join(" / ") : contactInfo.phone}
+            </span>
+          </div>
         </div>
         <div className="flex items-center gap-2">
           <Image
-          src={data.icons.email}
-          alt="Email"
-          width={50}
-          height={50}
+            src={data.icons.email}
+            alt="Email"
+            width={50}
+            height={50}
           />
-         <div className="flex flex-col">
-         <p className="text-xs text-[#33A1E0] font-semibold">Email</p>
-          <span className="text-xs">
-            {contactInfo.email}
-          </span>
-         </div>
+          <div className="flex flex-col">
+            <p className="text-xs text-[#33A1E0] font-semibold">Email</p>
+            <span className="text-xs">
+              {contactInfo.email}
+            </span>
+          </div>
         </div>
         <div className="flex items-center gap-2">
-        {/* < span className=" border rounded-lg rotate-45 h-10 w-10 relative"></span> */}
-        <Image
-        src={data.icons.address}
-        alt="Address"
-        width={50}
-        height={50}
-        />
-        <div className="flex flex-col">
-        <p className="text-xs text-[#33A1E0] font-semibold">Address</p>
+          {/* < span className=" border rounded-lg rotate-45 h-10 w-10 relative"></span> */}
+          <Image
+            src={data.icons.address}
+            alt="Address"
+            width={50}
+            height={50}
+          />
+          <div className="flex flex-col">
+            <p className="text-xs text-[#33A1E0] font-semibold">Address</p>
             <span className="text-xs">
               {contactInfo.address}
             </span>
-        </div>
+          </div>
         </div>
       </div>
-       <hr className="mt-10"/>
+      <hr className="mt-10" />
       {/* Bottom */}
       <div className="max-w-7xl mx-auto mt-10 flex flex-col md:flex-row items-center justify-between">
         <p className="text-xs">{data.copyright}</p>
         <div className="flex gap-4 mt-4 md:mt-0 text-lg">
-        <div className="mt-8">
-           
-           <div className="flex gap-4">
-            
-               <div
-                 
-                 target="_blank"
-                 
-                 className="flex gap-4"
-                 
-               >
-                 <a href={data.facebookLink}><FaFacebookF className="w-9 h-9 text-white border border-white rounded-full p-2 cursor-pointer" /></a>
-                 <a href={data.instagramLink}><FaInstagram className="w-9 h-9 text-white border border-white rounded-full p-2 cursor-pointer" /></a>
-                 <a href={data.linkedinLink}><FaLinkedinIn className="w-9 h-9 text-white border border-white rounded-full p-2 cursor-pointer" /></a>
-                 <a href={data.pintrestLink}><FaPinterestP className="w-9 h-9 text-white border border-white rounded-full p-2 cursor-pointer" /></a>
-               </div>
-             
-           </div>
-         </div>
+          <div className="mt-8">
+
+            <div className="flex gap-4">
+
+              <div
+
+                target="_blank"
+
+                className="flex gap-4"
+
+              >
+                <a target="_blank" href={contactInfo.facebookLink}><FaFacebookF  className="w-9 h-9 text-white border border-white rounded-full p-2 cursor-pointer" /></a>
+                <a target="_blank" href={contactInfo.instagramLink}><FaInstagram className="w-9 h-9 text-white border border-white rounded-full p-2 cursor-pointer" /></a>
+                <a target="_blank" href={contactInfo.linkedinLink}><FaLinkedinIn className="w-9 h-9 text-white border border-white rounded-full p-2 cursor-pointer" /></a>
+                <a target="_blank" href={contactInfo.pintrestLink}><FaPinterestP className="w-9 h-9 text-white border border-white rounded-full p-2 cursor-pointer" /></a>
+              </div>
+
+            </div>
+          </div>
         </div>
       </div>
     </footer>

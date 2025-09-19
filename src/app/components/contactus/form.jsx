@@ -11,6 +11,8 @@ const icons = {
 };
 
 export default function ContactSection({ data }) {
+
+  
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -64,10 +66,10 @@ export default function ContactSection({ data }) {
                 className="flex gap-4"
 
               >
-                <a href={data.facebookLink}><FaFacebookF className="w-9 h-9 text-[#154D71] border border-[#154D71] rounded-full p-2 cursor-pointer" /></a>
-                <a href={data.instagramLink}><FaInstagram className="w-9 h-9 text-[#154D71] border border-[#154D71] rounded-full p-2 cursor-pointer" /></a>
-                <a href={data.linkedinLink}><FaLinkedinIn className="w-9 h-9 text-[#154D71] border border-[#154D71] rounded-full p-2 cursor-pointer" /></a>
-                <a href={data.pintrestLink}><FaPinterestP className="w-9 h-9 text-[#154D71] border border-[#154D71] rounded-full p-2 cursor-pointer" /></a>
+                <a target="_blank" href={data.facebookLink}><FaFacebookF className="w-9 h-9 text-[#154D71] border border-[#154D71] rounded-full p-2 cursor-pointer" /></a>
+                <a target="_blank" href={data.instagramLink}><FaInstagram className="w-9 h-9 text-[#154D71] border border-[#154D71] rounded-full p-2 cursor-pointer" /></a>
+                <a target="_blank" href={data.linkedinLink}><FaLinkedinIn className="w-9 h-9 text-[#154D71] border border-[#154D71] rounded-full p-2 cursor-pointer" /></a>
+                <a target="_blank" href={data.pintrestLink}><FaPinterestP className="w-9 h-9 text-[#154D71] border border-[#154D71] rounded-full p-2 cursor-pointer" /></a>
               </div>
 
             </div>

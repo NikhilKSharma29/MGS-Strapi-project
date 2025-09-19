@@ -16,6 +16,8 @@ const page = async() => {
       { type: "Address", value: info.address },
       { type: "Email", value: info.email },
       { type: "Phone", value: info.phone },
+      
+      
     ],
     socials: [
       { name: "Facebook", href: "#", icon: "facebook" },
